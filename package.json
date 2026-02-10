@@ -1,0 +1,129 @@
+{
+  "name": "trad-stock-monitor",
+  "displayName": "TRAD Stock Monitor",
+  "description": "Real-time A-share stock profit/loss monitoring",
+  "version": "0.1.0",
+  "publisher": "trad",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andonox/trad_monitor_vscode.git"
+  },
+  "license": "MIT",
+  "keywords": ["stock", "monitor", "trading", "finance", "chinese", "a-share"],
+  "homepage": "https://github.com/andonox/trad_monitor_vscode#readme",
+  "bugs": {
+    "url": "https://github.com/andonox/trad_monitor_vscode/issues"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:tradStockMonitor",
+    "onCommand:trad.startMonitoring",
+    "onCommand:trad.stopMonitoring",
+    "onCommand:trad.openConfig"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "tradStockMonitor",
+          "name": "TRAD Stock Monitor"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "trad.startMonitoring",
+        "title": "Start Monitoring"
+      },
+      {
+        "command": "trad.stopMonitoring",
+        "title": "Stop Monitoring"
+      },
+      {
+        "command": "trad.openConfig",
+        "title": "Open Configuration"
+      },
+      {
+        "command": "trad.addStock",
+        "title": "Add Stock"
+      },
+      {
+        "command": "trad.refresh",
+        "title": "Refresh Stocks"
+      },
+      {
+        "command": "trad.showStockDetails",
+        "title": "Show Stock Details"
+      },
+      {
+        "command": "trad.importConfig",
+        "title": "Import Configuration"
+      },
+      {
+        "command": "trad.exportConfig",
+        "title": "Export Configuration"
+      },
+      {
+        "command": "trad.resetConfig",
+        "title": "Reset Configuration"
+      },
+      {
+        "command": "trad.restoreConfig",
+        "title": "Restore Configuration"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "trad",
+          "title": "TRAD",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "TRAD Stock Monitor",
+      "properties": {
+        "trad.updateInterval": {
+          "type": "number",
+          "default": 20,
+          "description": "Update interval in seconds"
+        },
+        "trad.autoStart": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto start monitoring on extension activation"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "test:unit": "jest --config jest.config.js",
+    "test:unit:watch": "jest --config jest.config.js --watch",
+    "test:unit:coverage": "jest --config jest.config.js --coverage",
+    "test:e2e": "node ./out/test/runTest.js",
+    "test:all": "npm run test:unit && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^16.11.0",
+    "typescript": "^4.5.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "@vscode/test-electron": "^2.3.0",
+    "sinon": "^15.0.0",
+    "@types/sinon": "^10.0.0"
+  }
+}

@@ -1,0 +1,66 @@
+# Files to exclude from the extension package
+
+# Development and testing files
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+**/test*
+**/tests/
+**/coverage/
+**/.pytest_cache/
+**/.github/
+**/.vscode/
+**/.gitignore
+
+# Documentation and design files
+**/DESIGN.md
+**/TESTING_*.md
+**/Makefile
+**/jest.config.js
+
+# Development scripts
+**/start_extension.sh
+**/stop_extension.sh
+**/test_installation.sh
+**/test_functional.sh
+**/.extension_pids
+
+# Python test files (keep daemon script)
+**/tests/python/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/htmlcov/
+**/.tox/
+**/.coverage
+**/.cache
+**/nosetests.xml
+**/coverage.xml
+**/*.cover
+**/.hypothesis/
+
+# TypeScript test files
+**/tests/typescript/
+
+# Node.js files
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/lerna-debug.log*
+
+# IDE files
+**/.idea/
+**/.vscode/
+**/*.swp
+**/*.swo
+**/*~
+
+# OS files
+**/.DS_Store
+**/Thumbs.db
