@@ -1,6 +1,8 @@
 # TRAD Stock Monitor VSCode Extension
 
+程序员摸鱼工具
 Real-time A-share stock profit/loss monitoring extension for Visual Studio Code.
+可以用来在上班的时候，使用vscode偷偷看自己的股票
 
 ## Features
 
